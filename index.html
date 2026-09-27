@@ -1026,7 +1026,7 @@ P(·|정상)          출전자 전원 라운드별 정상 타수 d(r) − μ + 
 });
 {const _t=TABS.pop(); TABS.splice(1,0,_t);}
 
-/* ================= ⑧ 확률로 읽는 네 동물 (v8 · 20260924) =================
+/* ================= ⑧ 선수별 포지셔닝(라이온/타이거/재규어/코끼리) (v8 · 20260924) =================
    칸 확률 P(L/T/J/E) × 칸별 성적 = 확률 가중 기대 성적. 층·유보 선수의 의미를 숫자로 읽는다. */
 const K4=["LION","TIGER","JAGUAR","ELEPHANT"];
 function mixBar(q,h=16){
@@ -1052,7 +1052,7 @@ function readProb(p){
   if(p.rec) s+=`<p>최근 두 해(2024~25) 창에서는 <b>${esc(p.rec.rep)}</b> · 기대 우승률 ${f(p.rec.ewin,2)}%. ${p.rec.rep!==p.rep?"<b>전체 기간과 다르다</b> — 5년 평균 칸보다 최근 창이 «현재 위치»에 가깝다.":"전체 기간과 같다."}</p>`;
   return s;
 }
-tab("t8","⑧ 확률로 읽는 네 동물",()=>{
+tab("t8","⑧ 선수별 포지셔닝(라이온/타이거/재규어/코끼리)",()=>{
   const p=byName[cur], R=D.v121.rates, QO=D.qso, BS=(typeof NCF!=="undefined")?NCF.bs:{};
   const MEAN={LION:["실력 위 · 같은 실력보다 라운드 편차가 크다","우승이 가장 잦은 칸. 좋은 날의 폭이 우승으로 이어진다","«늘 최고»가 아니다 — 변동이 크므로 나쁜 날도 크다"],
     TIGER:["실력 위 · 같은 실력보다 라운드가 촘촘하다","톱10 은 LION 에 가깝게 쌓이지만 우승은 절반 수준","«곧 라이온»·«새가슴»이 아니다 — 분포가 좁으면 우승에 필요한 꼬리가 얇을 뿐"],
@@ -1206,7 +1206,7 @@ tab("t0","◎ KSPO 제출 요약",()=>{
      <tr><td>★ 정상 반사실</td><td style="text-align:left">평소대로 쳤다면 몇 위였나, 우승에 든 운의 크기</td><td style="text-align:left">C&amp;R 2009</td></tr>
      <tr><td>②~④</td><td style="text-align:left">실력 수준(X)·부문 샷 기량·잔차 Θ, 우승 해부</td><td style="text-align:left">Rendleman 2020·2026, Stigler 2018</td></tr>
      <tr><td>⑤~⑦</td><td style="text-align:left">네 동물 판정(LION·TIGER·JAGUAR·ELEPHANT), 선수 카드</td><td style="text-align:left">판정 원칙 v1.2.1</td></tr>
-     <tr><td>⑧ 확률로 읽는 네 동물</td><td style="text-align:left">칸별 확률, 기대 승수(xWins)·xTop10, 현장 직관 검정</td><td style="text-align:left">24a–24e 검증</td></tr>
+     <tr><td>⑧ 선수별 포지셔닝(라이온/타이거/재규어/코끼리)</td><td style="text-align:left">칸별 확률, 기대 승수(xWins)·xTop10, 현장 직관 검정</td><td style="text-align:left">24a–24e 검증</td></tr>
     </tbody></table></div>
     <p class="small" style="margin-top:6px">상단 선수 선택기는 ①~⑧ 탭에서 나타납니다. 주황 테두리 칩은 분석 기준 선수입니다.</p></div>
    <div class="card"><h2>KSPO 공공데이터 설계도</h2><p class="note">여섯 편의 방법이 작동하려면 «같은 선수를 오래, 같은 기준으로» 기록해야 합니다.</p>
